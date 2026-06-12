@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROV Ground Control Station</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- <script src="D:\IRMA\Dewo\GCS_ROV\interact.js"></script> -->
+</head>
+
+<body>
+  <div class="dashboard">
+
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="brand">
+        <!-- <div class="logo">UN</div> -->
+        <div>
+          <h3>UNIVERSITAS NEGERI SURABAYA</h3>
+          <p><span class="dot green"></span> GCS SYSTEM ONLINE</p>
+        </div>
+      </div>
+
+      <h1>GROUND CONTROL STATION</h1>
+
+      <div class="system-info">
+        <div>
+          <span>TEAM</span>
+          <strong>GCS ROV TEAM</strong>
+        </div>
+        <div>
+          <span>SYSTEM STATUS</span>
+          <strong class="badge green-badge">OPERATIONAL</strong>
+        </div>
+        <button class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <main class="main-grid">
+
+      <!-- CAMERA 1 -->
+      <section class="panel camera-panel cam1">
+        <div class="panel-head">
+            <h2><i class="fa-solid fa-camera"></i> CAM 1</h2>
+            <div class="camera-actions">
+              <button class="cam-action capture-btn" title="Screenshot">
+                <i class="fa-solid fa-camera"></i>
+              </button>
+          
+              <button class="cam-action fullscreen-btn" title="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+          
+              <label class="camera-toggle">
+                <input type="checkbox" id="toggleCam1" />
+                <span class="toggle-slider"></span>
+                <span class="toggle-text">OFF</span>
+              </label>
+            </div>
+        </div>
+
+        <div class="video-box">
+          <div class="video-placeholder">
+            <span>CAMERA FEED 1</span>
+          </div>
+
+          <div class="video-info">
+            <span>1080p • 30fps</span>
+            <span>Low Light</span>
+          </div>
+
+          <div class="signal">
+            <i class="fa-solid fa-signal"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAMERA 2 -->
+      <section class="panel camera-panel cam2">
+        <div class="panel-head">
+            <h2><i class="fa-solid fa-camera"></i> CAM 2</h2>
+            <div class="camera-actions">
+              <button class="cam-action capture-btn" title="Screenshot">
+                <i class="fa-solid fa-camera"></i>
+              </button>
+          
+              <button class="cam-action fullscreen-btn" title="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+          
+              <label class="camera-toggle">
+                <input type="checkbox" id="toggleCam2" />
+                <span class="toggle-slider"></span>
+                <span class="toggle-text">OFF</span>
+              </label>
+            </div>
+        </div>
+
+        <div class="video-box">
+          <div class="video-placeholder">
+            <span>CAMERA FEED 2</span>
+          </div>
+
+          <div class="video-info">
+            <span>1080p • 30fps</span>
+            <span>Low Light</span>
+          </div>
+
+          <div class="signal">
+            <i class="fa-solid fa-signal"></i>
+          </div>
+        </div>
+      </section>
+
+        <!-- TRAJECTORY STATUS -->
+        <aside class="panel status-panel trajectory-status">
+            <h2 class="section-title">TRAJECTORY REPLAY</h2>
+            <div class="trajectory-graph status-trajectory">
+            <div class="danger-line"></div>
+            </div>        
+            <div class="trajectory-info">
+            </div>
+        </aside>
+
+      <!-- QR SCANNER -->
+      <section class="panel qr-panel">
+        <h2 class="section-title">QR SCANNER</h2>
+
+        <div class="qr-card">
+          <div class="qr-box">
+            <i class="fa-solid fa-qrcode"></i>
+          </div>
+
+          <div class="qr-result">
+            <span>TARGET ID</span>
+            <strong>A</strong>
+            <p>CONFIDENCE <b>98%</b></p>
+          </div>
+
+          <div class="qr-status">
+            <span>STATUS</span>
+            <strong><i class="fa-solid fa-circle-check"></i> VALID</strong>
+          </div>
+
+          <div class="qr-time">
+            <span>TIME</span>
+            <strong>10:26:18</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOG + TRAJECTORY + REPLAY -->
+      <section class="panel monitor-panel">
+
+        <div class="log-panel">
+          <h2 class="section-title">DATA LOG / SERIAL CONSOLE</h2>
+
+          <div class="console"> 
+          </div>
+        </div>
+
+        <div class="rov-design-panel">
+            <h2 class="section-title">ROV DESIGN</h2>
+          
+            <div class="rov-design-card">
+              <div class="rov-body">
+                <div class="gripper">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="rov-specs">
+                <div>
+                  <span>CAMERA</span>
+                  <strong>2 ONLINE</strong>
+                </div>
+                <div>
+                  <span>GRIPPER</span>
+                  <strong>READY</strong>
+                </div>
+                <div>
+                  <span>THRUSTER</span>
+                  <strong>6 PWM</strong>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="replay-panel">
+          <h2 class="section-title">REPLAY CONTROLS</h2>
+
+          <div class="media-controls">
+            <button><i class="fa-solid fa-backward-step"></i></button>
+            <button class="play"><i class="fa-solid fa-play"></i></button>
+            <button><i class="fa-solid fa-pause"></i></button>
+            <button><i class="fa-solid fa-forward-step"></i></button>
+          </div>
+
+          <div class="progress">
+            <span>00:12:18</span>
+            <input type="range" min="0" max="100" value="45" />
+            <span>00:26:18</span>
+          </div>
+
+          <div class="feature-list">
+            <div>
+              <span><i class="fa-solid fa-camera"></i> AUTO SNAPSHOT</span>
+              <b class="toggle-on">ON</b>
+            </div>
+
+            <div>
+              <span><i class="fa-solid fa-database"></i> DATA LOGGING</span>
+              <b class="toggle-on">ON</b>
+              <em class="recording">● RECORDING</em>
+            </div>
+
+            <div>
+              <span><i class="fa-solid fa-volume-high"></i> AUDIO ALARM</span>
+              <b class="toggle-on">ON</b>
+              <em class="warning-badge">DEPTH WARNING</em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TELEMETRY -->
+      <section class="panel telemetry-panel">
+        <h2 class="section-title">TELEMETRY</h2>
+
+        <div class="telemetry-grid">
+          <div class="telemetry-card">
+            <i class="fa-solid fa-water"></i>
+            <span>HEIGHT / DEPTH</span>
+            <strong>12.45 m</strong>
+            <p>FROM SURFACE</p>
+          </div>
+
+          <div class="telemetry-card">
+            <i class="fa-solid fa-wave-square"></i>
+            <span>PWM SUMMARY</span>
+            <div class="pwm">
+              <p>PWM1 <b>1500</b></p>
+              <p>PWM4 <b>1501</b></p>
+              <p>PWM2 <b>1498</b></p>
+              <p>PWM5 <b>1498</b></p>
+              <p>PWM3 <b>1502</b></p>
+              <p>PWM6 <b>1500</b></p>
+            </div>
+          </div>
+
+          <div class="telemetry-card">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>MOVEMENT</span>
+            <div class="setpoint">
+              <p>ROLL <b>400</b></p>
+              <p>PITCH <b>350</b></p>
+              <p>YAW <b>200</b></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTROLS -->
+      <section class="panel controls-panel">
+        <h2 class="section-title">CONTROLS</h2>
+
+        <div class="control-buttons">
+          <button class="btn record">
+            <i class="fa-solid fa-circle"></i> START RECORD
+          </button>
+
+          <button class="btn snapshot">
+            <i class="fa-solid fa-camera"></i> SNAPSHOT
+          </button>
+
+          <button class="btn replay">
+            <i class="fa-solid fa-video"></i> REPLAY
+          </button>
+
+          <button class="btn reset">
+            <i class="fa-solid fa-rotate-left"></i> RESET SESSION
+          </button>
+
+          <button class="btn alert-small">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            DEPTH ALERT &gt; 80 cm
+          </button>
+        </div>
+
+        <div class="mode-toggle">
+          <div class="mode-label">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>MODE</span>
+          </div>
+
+          <button class="mode active">MANUAL</button>
+          <button class="mode">AUTONOMOUS</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="interact.js"></script>
+</body>
+</html>
